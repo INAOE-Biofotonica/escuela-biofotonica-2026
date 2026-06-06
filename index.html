@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro | Escuela de Biofotónica 2026</title>
+
+  <style>
+    :root {
+      --azul: #123c69;
+      --azul-claro: #2a9df4;
+      --verde: #3bb273;
+      --gris: #f4f7fb;
+      --texto: #1f2933;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #eef7ff, #f8fbff);
+      color: var(--texto);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+
+    header p {
+      max-width: 800px;
+      margin: 15px auto 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: -30px auto 50px;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .eventos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .evento-card {
+      background: var(--gris);
+      padding: 20px;
+      border-radius: 16px;
+      border-left: 6px solid var(--azul-claro);
+    }
+
+    .evento-card h3 {
+      margin-top: 0;
+      color: var(--azul);
+    }
+
+    fieldset {
+      border: none;
+      margin: 0 0 28px;
+      padding: 0;
+    }
+
+    legend {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--azul);
+      margin-bottom: 15px;
+      border-bottom: 2px solid #e5e7eb;
+      width: 100%;
+      padding-bottom: 8px;
+    }
+
+    label {
+      display: block;
+      margin: 14px 0 6px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 1rem;
+      background: white;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      font-weight: normal;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .radio-group input,
+    .checkbox-group input {
+      width: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--azul), var(--verde));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      opacity: 0.95;
+    }
+
+    button:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+    }
+
+    .mensaje {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      display: none;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .exito {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .error {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Registro</h1>
+  <p>
+    Foro Interdisciplinario sobre Tratamiento de Aguas del Atoyac
+    y Escuela de Biofotónica 2026
+  </p>
+</header>
+
+<main class="container">
+  <section class="card">
+
+    <div class="eventos">
+      <div class="evento-card">
+        <h3>Foro Interdisciplinario sobre Tratamiento de Aguas del Atoyac</h3>
+        <p><strong>Fecha:</strong> 11 de agosto de 2026</p>
+        <p><strong>Sede:</strong> INAOE</p>
+        <p><strong>Modalidad:</strong> Híbrida</p>
+      </div>
+
+      <div class="evento-card">
+        <h3>Escuela de Biofotónica</h3>
+        <p><strong>Fecha:</strong> 12 al 14 de agosto de 2026</p>
+        <p><strong>Sede:</strong> INAOE</p>
+        <p><strong>Modalidad:</strong> Presencial</p>
+      </div>
+    </div>
+
+    <form id="registroForm">
+
+      <fieldset>
+        <legend>Datos generales</legend>
+
+        <label>Nombre completo *</label>
+        <input type="text" name="nombre" required />
+
+        <label>Correo electrónico *</label>
+        <input type="email" name="correo" required />
+
+        <label>Teléfono de contacto *</label>
+        <input type="tel" name="telefono" required />
+
+        <label>Institución de procedencia *</label>
+        <input type="text" name="institucion" required />
+
+        <label>Ciudad y estado/país *</label>
+        <input type="text" name="ciudad" required />
+
+        <label>¿Cómo te enteraste de la Escuela de Biofotónica y el Foro? *</label>
+        <select name="medio" required>
+          <option value="">Selecciona una opción</option>
+          <option>Redes sociales</option>
+          <option>Página web del INAOE</option>
+          <option>Correo electrónico</option>
+          <option>Profesor(a) o investigador(a)</option>
+          <option>Compañero(a)</option>
+          <option>Ediciones anteriores</option>
+          <option>Otro</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Participación</legend>
+
+        <label>¿En cuál evento deseas participar? *</label>
+        <select name="evento" required>
+          <option value="">Selecciona una opción</option>
+          <option>Foro Interdisciplinario sobre Tratamiento de Aguas del Atoyac</option>
+          <option>Escuela de Biofotónica</option>
+          <option>Ambos eventos</option>
+        </select>
+
+        <label>Modalidad de asistencia *</label>
+        <select name="modalidad" required>
+          <option value="">Selecciona una opción</option>
+          <option>Presencial</option>
+          <option>Virtual</option>
+        </select>
+
+        <label>¿Has participado anteriormente en la Escuela de Biofotónica? *</label>
+        <select name="participoAntes" required>
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Formación académica</legend>
+
+        <label>Nivel académico actual *</label>
+        <select name="nivel" required>
+          <option value="">Selecciona una opción</option>
+          <option>Licenciatura</option>
+          <option>Maestría</option>
+          <option>Doctorado</option>
+          <option>Posdoctorado</option>
+          <option>Profesor/Investigador</option>
+          <option>Industria</option>
+          <option>Otro</option>
+        </select>
+
+        <label>Carrera, programa académico o área profesional *</label>
+        <input type="text" name="programa" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Intereses académicos</legend>
+
+        <label>Área principal de interés *</label>
+        <select name="area" required>
+          <option value="">Selecciona una opción</option>
+          <option>Biofotónica</option>
+          <option>Óptica biomédica</option>
+          <option>Microscopía</option>
+          <option>Imagen médica</option>
+          <option>Terapia fotodinámica</option>
+          <option>Biosensores</option>
+          <option>Nanomedicina</option>
+          <option>Inteligencia artificial aplicada a biomedicina</option>
+          <option>Ingeniería biomédica</option>
+          <option>Remediación ambiental</option>
+          <option>Tratamiento de aguas</option>
+          <option>Otra</option>
+        </select>
+
+        <label>¿Te interesa realizar estudios de posgrado relacionados con la biofotónica? *</label>
+        <select name="posgrado" required>
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+          <option>Tal vez</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Participación científica</legend>
+
+        <label>¿Te gustaría presentar un póster durante la Escuela? *</label>
+        <select name="poster" id="poster" required>
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+
+        <div id="posterInfo" class="hidden">
+          <label>Título del trabajo a presentar</label>
+          <input type="text" name="tituloPoster" />
+
+          <label>Autores</label>
+          <textarea name="autoresPoster"></textarea>
+
+          <label>Resumen breve</label>
+          <textarea name="resumenPoster"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Logística</legend>
+
+        <label>Nombre completo para constancia de participación *</label>
+        <input type="text" name="nombreConstancia" required />
+
+        <label>¿Presentas alguna condición médica o necesidad especial que debamos considerar?</label>
+        <textarea name="necesidades"></textarea>
+
+        <label>¿Requieres información sobre hospedaje cercano? *</label>
+        <select name="hospedaje" required>
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Seguimiento e impacto</legend>
+
+        <label>¿Te gustaría recibir información sobre futuras actividades del Grupo de Biofotónica del INAOE? *</label>
+        <select name="biofotonica" required>
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+
+        <label>¿Te gustaría recibir información sobre programas de posgrado del INAOE? *</label>
+        <select name="posgradoInfo" required>
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+
+        <label>¿Autoriza el uso de fotografías y videos tomados durante el evento para difusión académica? *</label>
+        <select name="fotos" required>
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+
+        <label>¿Autoriza que su correo sea incorporado a la base de datos de difusión de la Escuela? *</label>
+        <select name="baseDifusion" required>
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </fieldset>
+
+      <button type="submit" id="btnEnviar">Enviar registro</button>
+
+      <div id="mensajeExito" class="mensaje exito">
+        Registro enviado correctamente. Revisa tu correo electrónico para confirmar tu inscripción.
+      </div>
+
+      <div id="mensajeError" class="mensaje error">
+        Ocurrió un error al enviar el registro. Intenta nuevamente.
+      </div>
+
+    </form>
+  </section>
+</main>
+
+<footer>
+  Grupo de Biofotónica · INAOE
+</footer>
+
+<script>
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby6xQ5ZR9DTvuzeWtArDE2HYSUVyG8l2UvR1Wo8Sje5_-bDwiu6zAQl9SS4_rl3kU0Y/exec";
+
+  const form = document.getElementById("registroForm");
+  const btnEnviar = document.getElementById("btnEnviar");
+  const mensajeExito = document.getElementById("mensajeExito");
+  const mensajeError = document.getElementById("mensajeError");
+  const poster = document.getElementById("poster");
+  const posterInfo = document.getElementById("posterInfo");
+
+  poster.addEventListener("change", function () {
+    if (this.value === "Sí") {
+      posterInfo.classList.remove("hidden");
+    } else {
+      posterInfo.classList.add("hidden");
+    }
+  });
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    mensajeExito.style.display = "none";
+    mensajeError.style.display = "none";
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const datos = Object.fromEntries(new FormData(form));
+
+    datos.fechaRegistro = new Date().toISOString();
+    datos.estadoConstancia = "Pendiente";
+    datos.asistenciaForo = "";
+    datos.asistenciaEscuela = "";
+    datos.constanciaGenerada = "No";
+
+    btnEnviar.disabled = true;
+    btnEnviar.textContent = "Enviando...";
+
+    try {
+      const respuesta = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(datos)
+      });
+
+      if (respuesta.ok) {
+        mensajeExito.style.display = "block";
+        form.reset();
+        posterInfo.classList.add("hidden");
+      } else {
+        throw new Error("Error en la respuesta del servidor");
+      }
+
+    } catch (error) {
+      console.error(error);
+      mensajeError.style.display = "block";
+    }
+
+    btnEnviar.disabled = false;
+    btnEnviar.textContent = "Enviar registro";
+  });
+</script>
+
+</body>
+</html>
