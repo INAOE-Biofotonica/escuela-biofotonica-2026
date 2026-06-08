@@ -207,7 +207,7 @@
         <h3>Foro Interdisciplinario sobre Tratamiento de Aguas del Atoyac</h3>
         <p><strong>Fecha:</strong> 11 de agosto de 2026</p>
         <p><strong>Sede:</strong> INAOE</p>
-        <p><strong>Modalidad:</strong> Híbrida</p>
+        <p><strong>Modalidad:</strong> Presencial</p>
       </div>
 
       <div class="evento-card">
@@ -260,13 +260,6 @@
           <option>Foro Interdisciplinario sobre Tratamiento de Aguas del Atoyac</option>
           <option>Escuela de Biofotónica</option>
           <option>Ambos eventos</option>
-        </select>
-
-        <label>Modalidad de asistencia *</label>
-        <select name="modalidad" required>
-          <option value="">Selecciona una opción</option>
-          <option>Presencial</option>
-          <option>Virtual</option>
         </select>
 
         <label>¿Has participado anteriormente en la Escuela de Biofotónica? *</label>
@@ -356,7 +349,18 @@
         <label>¿Presentas alguna condición médica o necesidad especial que debamos considerar?</label>
         <textarea name="necesidades"></textarea>
 
-        <label>¿Requieres información sobre hospedaje cercano? *</label>
+        <label for="becaHospedaje">¿Te gustaría solicitar una beca de hospedaje?</label>
+<select id="becaHospedaje" name="becaHospedaje" required>
+  <option value="">Selecciona una opción</option>
+  <option value="Sí">Sí</option>
+  <option value="No">No</option>
+</select>
+        
+        <p class="nota">
+  Nota: Las becas de hospedaje son limitadas y estarán sujetas a disponibilidad y evaluación.
+</p>
+        
+        <label>En caso de no obtener la beca, ¿Requieres información sobre hospedaje cercano? *</label>
         <select name="hospedaje" required>
           <option value="">Selecciona una opción</option>
           <option>Sí</option>
@@ -411,7 +415,7 @@
 </main>
 
 <footer>
-  Grupo de Biofotónica · INAOE
+  Nano-PhOE · Grupo de Biofotónica · INAOE
 </footer>
 
 <script>
